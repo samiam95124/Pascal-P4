@@ -1,0 +1,72 @@
+#!/bin/bash
+#
+# Set up compiler to use.
+#
+# Presently implements:
+#
+# IP Pascal, named "ip_pascal"
+#
+# GPC Pascal, named "GPC" (or "gpc")
+#
+
+if [ -z "$1" ]
+then
+
+   echo "*** Error: Missing parameter"
+   echo "*** Must be \"ip_pascal\" or \"gpc\""
+   exit 1
+
+fi
+
+if [ $1 = "ip_pascal" ]
+then
+
+   #
+   # Set up for IP Pascal
+   #
+   cp ip_pascal/p5.bat      p5.bat
+   cp ip_pascal/compile.bat compile.bat
+   cp ip_pascal/run.bat     run.bat
+   cp ip_pascal/cpcom.bat   cpcom.bat
+   cp ip_pascal/cpint.bat   cpint.bat
+
+   cp ip_pascal/p5          p5
+   cp ip_pascal/compile     compile
+   cp ip_pascal/run         run
+   cp ip_pascal/cpcom       cpcom
+   cp ip_pascal/cpint       cpint
+
+   echo Compiler set to IP Pascal
+
+elif [ $1 = "gpc" ] || [ $1 = "GPC" ]
+then 
+
+   #
+   # Set up for GPC Pascal
+   #
+   cp gpc/p5.bat      p5.bat
+   cp gpc/compile.bat compile.bat
+   cp gpc/run.bat     run.bat
+   cp gpc/cpcom.bat   cpcom.bat
+   cp gpc/cpint.bat   cpint.bat
+
+   cp gpc/p5          p5
+   cp gpc/compile     compile
+   cp gpc/run         run
+   cp gpc/cpcom       cpcom
+   cp gpc/cpint       cpint
+
+   echo Compiler set to GPC Pascal
+
+else
+
+   #
+   # No compiler name found!
+   #
+   echo "*** Compiler name does not match currently implemented"
+   echo "*** compilers"
+   echo
+   echo "IP Pascal  - use \"ip_pascal\""
+   echo "GPC Pascal - use \"GPC\""
+
+fi

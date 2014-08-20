@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# Run a Pascal file in batch mode using GPC Pascal
+#
+# Runs a Pascal intermediate in batch mode.
+#
+# Execution:
+#
+# run <file>
+#
+# <file> is the filename without extention.
+#
+# The files are:
+#
+# <file>.p4  - The intermediate file
+# <file>.out - The prr file produced
+# <file>.inp - The input file to the program
+# <file>.lst - The output file from the program
+#
+
+if [ -z "$1" ]
+then
+   echo "*** Error: Missing parameter"
+   exit 1
+fi
+
+if [ ! -f $1.p4 ]
+then
+   echo "*** Error: Missing $1.p4 file"
+   exit 1
+fi
+
+if [ ! -f $1.inp ]
+then
+   echo "*** Error: Missing $1.inp file"
+   exit 1
+fi
+
+cp $1.p4 prd 
+./pint < $1.inp &> $1.lst
+if [ -e "$1" ]
+then
+   rm $1.out
+fi
+mv prd $1.out
