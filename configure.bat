@@ -47,10 +47,10 @@ if %errorlevel% equ 0 goto gpccorrectver
 echo *** Warning, Pascal-p4 is only validated to work with gpc version 20070904
 :gpccorrectver
 rm temp2
-set bits=64
-grep "build=x86_64" temp > temp2
-if %errorlevel% equ 0 goto gpc64
-set bits=32
+rem set bits=64
+rem grep "build=x86_64" temp > temp2
+rem if %errorlevel% equ 0 goto gpc64
+rem set bits=32
 
 where /q flip
 if %errorlevel% equ 0 goto flipexists
@@ -186,14 +186,15 @@ rem
 :setbits
 if "%bits%" == "32" (
 
-    echo Setting for 32 bit target
-    set32
+    rem echo Setting for 32 bit target
+    rem set32
 
 )
 if "%bits%" == "64" (
 
-    echo Setting for 64 bit target
-    set64
+    echo *** Pascal-P4 is not capable of 64 bit at this time
+    rem echo Setting for 64 bit target
+    rem set64
 
 )
 
