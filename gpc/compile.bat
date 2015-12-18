@@ -4,9 +4,9 @@ rem Compile file in batch mode using GPC Pascal.
 rem
 rem Runs a compile with the input and output coming from/
 rem going to files.
-rem 
+rem
 rem Execution:
-rem 
+rem
 rem Compile <file>
 rem
 rem <file> is the filename without extention.
@@ -40,11 +40,11 @@ rem
 rem The status of the compile is not returned, so convert a non-zero
 rem error message to fail status
 rem
-grep -q "Errors in program: 0" %1.err
-if errorlevel 1 exit /b 1
+grep -q "^ *[0-9]* *\*\*\*\* *\^" %1.err
+if not errorlevel 1 exit /b 1
 rem
-rem Move the prr file to <file.p4> 
-rem 
+rem Move the prr file to <file.p4>
+rem
 if exist "%1.p4" del %1.p4
 copy prr %1.p4 > temp
 del prr > temp
