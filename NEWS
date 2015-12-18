@@ -1,0 +1,6 @@
+This is the first release version of Pascal-p4 on Sourceforge.
+
+Pascal-p4 is a runnable archive form of the original Pascal compiler
+from Zurich. There is no intent to fix bugs or perform improvements.
+Any such bug fixes or improvements go into Pascal-p5 or later
+versions.
