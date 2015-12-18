@@ -55,7 +55,7 @@ rem set bits=32
 where /q flip
 if %errorlevel% equ 0 goto flipexists
 echo Making flip.exe
-call bin\make_flip
+make flip
 dir bin\flip.exe > temp
 grep "flip.exe" temp > temp2
 if %errorlevel% equ 0 goto flipexists

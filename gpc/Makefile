@@ -40,3 +40,19 @@ clean:
 #
 repository_clean:
 	find . -name "*.p4" -type f -delete
+	
+#
+# Make ready for repository
+#
+# This target makes the code ready for the repository.
+# We configure for GPC 32 bit as normal target, and clean
+# all files.
+#
+repo_ready:
+	configure --gpc --32
+	
+#
+# Make flip program
+#
+flip: c_support\flip.c
+	gcc -o bin\flip c_support\flip.c
