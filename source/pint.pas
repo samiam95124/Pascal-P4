@@ -74,10 +74,10 @@ const codemax     =  100000(*8650*); (* increased this for testing [sam] *)
       prdadr      = 7;
       prradr      = 8;
       duminst     = 62;
-      (* Parameterized length of strings in intermediate. It was already a 
+      (* Parameterized length of strings in intermediate. It was already a
         comment, just changed to a real number. [sam] *)
       stringlgth      = 200(*16*);
-                
+
 type  bit4        = 0..15;
       bit6        = 0..127;
       bit20       = -1080000..1080000(*-26143..26143*); (* increased for testing [sam] *)
@@ -292,10 +292,10 @@ procedure load;
       end;(*labelsearch*)
 
       procedure getname;
-      begin  word[1] := ch; 
+      begin  word[1] := ch;
          read(prd,word[2],word[3]);
          if not eoln(prd) then read(prd,ch) (*next character*);
-         pack(word,1,name) 
+         pack(word,1,name)
       end; (*getname*)
 
       procedure typesymbol;
@@ -729,7 +729,7 @@ end;(*callsp*)
 
 begin (* main *)
   (* Must comment out the next for self compile *)
-  (* rewrite(prr); *)
+  rewrite(prr);
   load; (* assembles and stores code *)
   writeln(output); (* for testing *)
   pc := 0; sp := -1; mp := 0; np := maxstk+1; ep := 5;
@@ -749,7 +749,6 @@ begin (* main *)
     pc := pc+1;
 
     (*execute*)
-;writeln('Execute: ', op:1, ' at: ', pc:1);
     case op of
 
           105,106,107,108,109,
