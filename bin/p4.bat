@@ -31,4 +31,6 @@ copy prr %1.p4 > temp
 del prr
 copy %1.p4 prd > temp
 pint
+del prr 2> temp
+del prd 2> temp
 del temp
