@@ -13,10 +13,13 @@ pcom: source/pcom.pas
 	
 pint: source/pint.pas
 	$(PC) $(CFLAGS) -o bin/pint source/pint.pas
-	
+
+#
+# This level clean forces everything to be rebuilt.
+#
 clean:
 	rm -f bin/pcom bin/pint 
-	find . -name "*.p5" -type f -delete
+	find . -name "*.p4" -type f -delete
 	find . -name "*.out" -type f -delete
 	find . -name "*.lst" -type f -delete
 	find . -name "*.obj" -type f -delete
@@ -30,3 +33,10 @@ clean:
 	find . -name "temp" -type f -delete
 	find . -name "tmp" -type f -delete
 	find . -name "*~" -type f -delete
+
+#
+# This level clean makes the directory look
+# like the repository.
+#
+repository_clean:
+	find . -name "*.p4" -type f -delete
