@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Regression test
+#
+# Run the compiler through a few typical programs
+# to a "gold" standard file
+#
+testprog sample_programs/hello
+testprog sample_programs/roman
+testprog sample_programs/match
+testprog sample_programs/startrek
+testprog sample_programs/basics
+#
+# Now run the ISO7185pat compliance test
+#
+testprog standard_tests/iso7185pat
+#
+# Run pcom self compile (note this runs on P5 only)
+#
+cpcoms
+#
+# Run pint self compile (note this runs on P5 only)
+#
+cpints

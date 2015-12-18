@@ -1,0 +1,61 @@
+#!/bin/bash
+#
+# Test a single program run
+#
+# Tests the compile and run of a single program.
+#
+# To do this, there must be the files:
+#
+# <file>.inp - Contains all input to the program
+# <file>.cmp - Used to compare the <file>.lst program to, should
+#              contain an older, fully checked version of <file>.lst.
+#
+# <file>.dif will contain the differences in output of the run.
+#
+
+if [ -z "$1" ]
+then
+
+   echo "*** Error: Missing parameter"
+   echo "*** s/b \"testprog <file>\""
+   exit 1
+
+fi
+
+if [ ! -f $1.pas ]
+then
+
+   echo "*** Error: Source file $1.pas does not exist"
+   exit 1
+
+fi
+
+if [ ! -f $1.inp ]
+then
+
+   echo "*** Error: Input file $1.inp does not exist"
+   exit 1
+
+fi
+
+if [ ! -f $1.cmp ]
+then
+
+   echo "*** Error: Compare file $1.cmp does not exist"
+   exit 1
+
+fi
+
+echo Compile and run $1
+compile $1
+rc=$?
+if [[ $rc = 0 ]]
+then
+
+    run $1
+    diffnole $1.lst $1.cmp > $1.dif
+    ls -l $1.dif > $1.tmp
+    grep ".dif" $1.tmp
+    rm -f $1.tmp
+    
+fi
