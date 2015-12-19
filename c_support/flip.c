@@ -12,10 +12,10 @@
 *
 *    u     Generate Unix mode line endings.
 *    d,m   Generate DOS mode line endings.
-*    b     Force convertion on binary file (default is do not convert).
+*    b     Force conversion on binary file (default is do not convert).
 *    c     Send output to standard output instead of converting in place.
 *
-* This is the same utilitiy that comes with several versions of Unix.
+* This is the same utility that comes with several versions of Unix.
 *
 * Note that we use a universal line ending recognizer, that sees any of the
 * following line endings as valid:
@@ -49,7 +49,7 @@ main(int argc, char *argv[])
     int lf = 0;
     int cr = 0;
     FILE *sfp, *dfp;
-    /* options */    
+    /* options */
     int unixmode;
     int forcebin;
     int pstdout;
@@ -99,49 +99,49 @@ main(int argc, char *argv[])
         }
         /* copy contents and fix line endings to temp file */
         while ((c = getc(sfp)) != EOF) {
-        
+
             if (c == '\n') {
-        
+
                 if (cr) {
-        
+
                     /* Last was lf, this is cr, ignore */
                     cr = 0;
                     lf = 0;
-        
+
                 } else {
-        
+
                     /* output newline and flag last */
                     if (unixmode) fprintf(dfp, "\n");
                     else fprintf(dfp, "\r\n");
                     lf = 1;
-        
+
                 }
-        
+
              } else if (c == '\r') {
-        
+
                 if (lf) {
-        
+
                     /* last was cr, this is lf, ignore */
                     cr = 0;
                     lf = 0;
-                  
+
                 } else {
-        
+
                     /* output newline and flag last */
                     if (unixmode) fprintf(dfp, "\n");
                     else fprintf(dfp, "\r\n");
                     cr = 1;
-        
+
                 }
-        
+
             } else {
-        
-                /* Check binary character. We also check for common control 
+
+                /* Check binary character. We also check for common control
                    characters (characters under space). The idea of this check
                    is that if the command is executed on too wide a swath
-                   (like *), that it won't convert any binary files in the 
+                   (like *), that it won't convert any binary files in the
                    directory. */
-                if ((c > 0x7f || (c < ' ' && c != '\t' && c != '\v' && 
+                if ((c > 0x7f || (c < ' ' && c != '\t' && c != '\v' &&
                                  c != '\b' && c != '\f' && c != '\a')) && !forcebin) {
 
                     printf("File %s is binary, skipping\n", *argv);
@@ -155,9 +155,9 @@ main(int argc, char *argv[])
                 putc(c, dfp);
                 cr = 0;
                 lf = 0;
-        
+
             }
-        
+
         }
         /* close files and rename destination to source */
         fclose(sfp); /* close input file */
@@ -179,16 +179,15 @@ main(int argc, char *argv[])
 
         }
         skip: ; // skip to next file
-        
+
     }
 
 }
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
