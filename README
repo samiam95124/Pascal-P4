@@ -3,13 +3,12 @@
 ============================== Description =====================================
 
 This is the 4th version of the Pascal-P compiler from Zurich. It is mostly
-identical to the compiler released from Zurich. I make minor changes in it
+identical to the compiler released from Zurich. I made minor changes in it
 to allow it to compile under ISO 7185 Pascal, and to change the sizes of
 internal tables to run programs.
-This is the
-Pascal-P4 compiler modified to be ISO 7185 Pascal compilant, both in the the
-implementation language, and in the language it processes. It is the first
-version of Pascal-P created outside of Zurich.
+
+This is the Pascal-P4 compiler modified to be ISO 7185 Pascal compliant,
+both in the implementation language.
 
 Pascal-P was an implementation kit, created between 1972 and 1974, for the
 original language Pascal. The source for the original compiler was passed around
@@ -40,7 +39,11 @@ Pascal-p4 uses the standard GNU release layout. You execute:
 This will make the compiler and interpreter set. You can then try a sample
 program as:
 
-> p5 sample_programs/hello
+> p4 sample_programs/hello
+
+Note: Pascal-p4 has an issue where it tries to load the first character of the
+input before the program runs. Because of this, it is usually necessary to
+hit a carriage return to start the program.
 
 ================================== Problems ====================================
 
