@@ -48,10 +48,18 @@ repository_clean:
 # We configure for GPC 32 bit as normal target, and clean
 # all files.
 #
+repo_ready:
 	configure --gpc --32
 	
 #
 # Make flip program
 #
+flip:
 	gcc -o bin\flip c_support\flip.c
 	
+#
+# Make archive
+#
+archive:
+	rm pascal-p4.tar.gz
+	tar --exclude='./.git' --exclude='./.cproject' --exclude='./.project' -zcvf pascal-p4.tar.gz .
