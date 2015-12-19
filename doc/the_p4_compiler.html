@@ -1,0 +1,2710 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>IP Pascal User Manual</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Corbel;
+	panose-1:2 11 5 3 2 2 4 2 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	color:#5EA226;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;
+	font-style:italic;}
+h5
+	{mso-style-link:"Heading 5 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3E6B19;
+	font-weight:normal;}
+h6
+	{mso-style-link:"Heading 6 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3E6B19;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-link:"Heading 7 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:21.55pt;
+	text-indent:-21.55pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-link:"Heading 8 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:28.9pt;
+	text-indent:-28.9pt;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-link:"Heading 9 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.05pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.1pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:32.9pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:43.95pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:55.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.35pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.7pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-link:"Footnote Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	color:#7FD13B;
+	font-weight:bold;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoEndnoteReference
+	{vertical-align:super;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{mso-style-link:"Endnote Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:Consolas;
+	color:#3A4452;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:Consolas;
+	color:#3A4452;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:Consolas;
+	color:#3A4452;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:Consolas;
+	color:#3A4452;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:#EB8803;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#5F7791;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-link:"Document Map Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-link:"No Spacing Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+span.MsoIntenseReference
+	{font-family:"Arial","sans-serif";
+	font-variant:small-caps;
+	color:#EA157A;
+	letter-spacing:.25pt;
+	font-weight:bold;
+	text-decoration:underline;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Consolas;
+	color:#5EA226;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Arial","sans-serif";
+	color:#5EA226;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;
+	font-style:italic;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-link:"Heading 5";
+	font-family:"Arial","sans-serif";
+	color:#3E6B19;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-link:"Heading 6";
+	font-family:"Arial","sans-serif";
+	color:#3E6B19;
+	font-style:italic;}
+span.Heading7Char
+	{mso-style-name:"Heading 7 Char";
+	mso-style-link:"Heading 7";
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;
+	font-style:italic;}
+span.Heading8Char
+	{mso-style-name:"Heading 8 Char";
+	mso-style-link:"Heading 8";
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;}
+span.Heading9Char
+	{mso-style-name:"Heading 9 Char";
+	mso-style-link:"Heading 9";
+	font-family:"Arial","sans-serif";
+	color:#7FD13B;
+	font-weight:bold;
+	font-style:italic;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Times New Roman","serif";}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Times New Roman","serif";}
+span.NoSpacingChar
+	{mso-style-name:"No Spacing Char";
+	mso-style-link:"No Spacing";
+	font-family:"Times New Roman","serif";}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:Consolas;
+	color:#3A4452;
+	letter-spacing:.25pt;}
+p.reference, li.reference, div.reference
+	{mso-style-name:reference;
+	mso-style-link:"reference Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+span.referenceChar
+	{mso-style-name:"reference Char";
+	mso-style-link:reference;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.Lineheader, li.Lineheader, div.Lineheader
+	{mso-style-name:"Line header";
+	mso-style-link:"Line header Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:141.75pt;
+	margin-bottom:.0001pt;
+	text-indent:-113.4pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+span.LineheaderChar
+	{mso-style-name:"Line header Char";
+	mso-style-link:"Line header";
+	font-family:"Times New Roman","serif";}
+p.Tableheader, li.Tableheader, div.Tableheader
+	{mso-style-name:"Table header";
+	mso-style-link:"Table header Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+span.TableheaderChar
+	{mso-style-name:"Table header Char";
+	mso-style-link:"Table header";
+	font-family:"Times New Roman","serif";}
+p.tableheader0, li.tableheader0, div.tableheader0
+	{mso-style-name:"table header";
+	mso-style-link:"table header Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:black;
+	font-weight:bold;}
+span.tableheaderChar0
+	{mso-style-name:"table header Char";
+	mso-style-link:"table header";
+	font-family:"Arial","sans-serif";
+	color:black;
+	font-weight:bold;}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	mso-style-link:"Code Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+span.CodeChar
+	{mso-style-name:"Code Char";
+	mso-style-link:Code;
+	font-family:"Courier New";}
+span.DocumentMapChar
+	{mso-style-name:"Document Map Char";
+	mso-style-link:"Document Map";
+	font-family:"Tahoma","sans-serif";}
+p.Routineheading3, li.Routineheading3, div.Routineheading3
+	{mso-style-name:"Routine heading 3";
+	mso-style-link:"Routine heading 3 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#C00000;
+	font-weight:bold;}
+span.Routineheading3Char
+	{mso-style-name:"Routine heading 3 Char";
+	mso-style-link:"Routine heading 3";
+	font-family:"Arial","sans-serif";
+	color:#C00000;
+	font-weight:bold;}
+span.FootnoteTextChar
+	{mso-style-name:"Footnote Text Char";
+	mso-style-link:"Footnote Text";
+	font-family:"Times New Roman","serif";}
+span.EndnoteTextChar
+	{mso-style-name:"Endnote Text Char";
+	mso-style-link:"Endnote Text";
+	font-family:"Times New Roman","serif";}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+.MsoChpDefault
+	{font-family:"Corbel","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#EB8803" vlink="#5F7791">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>Pascal
+implementation</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:18.0pt;font-family:"Arial Black","sans-serif"'>The P4 Compiler</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;font-family:"Arial Black","sans-serif"'>Scott A. Moore</span></p>
+
+<span style='font-size:11.0pt;line-height:115%;font-family:"Times New Roman","serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='line-height:115%'>&nbsp;</p>
+
+<p class=MsoToc1><a href="#_Toc438300605">1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Overview of Pascal-P4<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300606">1.1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Introduction<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300607">1.2<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Differences between
+Pascal-P4 and full Pascal<span style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300608">1.3<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Differences between this
+Pascal-P4 and Pemberton’s book<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300609">1.4<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Bug fixes and
+improvements to Pascal-P4<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc438300610">2<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Using Pascal-P4<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300611">2.1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Configuring P4<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300612">2.2<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Compiling and running
+Pascal programs with P4<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300613">2.3<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Compiler options<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300614">2.4<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Other operations<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300615">2.5<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Reliance on Unix commands
+in the P4 toolset<span style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300616">2.6<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>The “flip” command and
+line endings<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc438300617">3<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Building the Pascal-P4
+system<span style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300618">3.1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Compiling and running P4
+with an existing ISO 7185 compiler<span style='color:windowtext;display:none;
+text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300619">3.2<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Notes on using existing
+compilers<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc438300620">3.2.1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>    </span>GPC<span style='color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc4><a href="#_Toc438300621">3.2.1.1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>      </span>GPC on Cygwin<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc4><a href="#_Toc438300622">3.2.1.2<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>      </span><span style='background:
+white'>GPC for mingw</span><span style='color:windowtext;display:none;
+text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc438300623">4<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>       </span>Files in the P4 package<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300624">4.1<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory: bin<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300625">4.2<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory: c_support<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300626">4.3<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory: doc<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300627">4.4<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory: gpc<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300628">4.5<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory: gpc/linux_X86<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300629">4.6<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory:
+gpc/standard_tests<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300630">4.7<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory:
+gpc/windows_X86<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300631">4.8<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory: ip_pascal<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300632">4.9<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>        </span>Directory:
+ip_pascal/standard_tests<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300633">4.10<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>     </span>Directory:
+ip_pascal/windows_X86<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300634">4.11<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>     </span>Subdirectory:
+sample_programs<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300635">4.12<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>     </span>Directory: source<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc438300636">4.13<span style='font-family:"Corbel","sans-serif";
+color:windowtext;text-decoration:none'>     </span>Directory: standard_tests<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
+
+<p class=MsoNormal style='line-height:115%'>&nbsp;</p>
+
+<span style='font-size:11.0pt;line-height:115%;font-family:"Times New Roman","serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='line-height:115%'><b><span style='font-size:14.0pt;
+line-height:115%;font-family:"Arial","sans-serif";color:#5EA226'>&nbsp;</span></b></p>
+
+<h1><a name="_Ref371924773"></a><a name="_Ref371924703"></a><a
+name="_Ref371924702"></a><a name="_Ref371924699"></a><a name="_Toc320481114"></a><a
+name="_Toc438300605">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview of Pascal-P4</a></h1>
+
+<p class=MsoNormal>This section contains background material on Pascal-P4. If
+you want to get started using Pascal-P4 now, skip to 2 “Using Pascal-P4”</p>
+
+<h2><a name="_Toc438300606">1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</a></h2>
+
+<p class=MsoNormal>The Pascal-P series compilers were the original proving
+compilers for the language Pascal. Created in 1973, Pascal-P was part of a
+“porting kit” designed to enable the quick implementation of a Pascal language
+compiler on new machines. It was released by Niklaus Wirth’s students at ETH in
+Zurich.</p>
+
+<p class=MsoNormal>The implementation and description of the language Pascal in
+terms of itself and in terms of a “pseudo machine” were important factors in
+the propagation of the language Pascal. From the early version of Pascal-P came
+the CDC 6000 full compiler at Zurich, several independent compilers including
+an IBM-360 compiler and a PDP-11 compiler, and the UCSD “byte code”
+interpreter.</p>
+
+<p class=MsoNormal>The original article for the Pascal-P compiler is at:</p>
+
+<p class=MsoNormal><a
+href="http://www.standardpascal.org/The_Pascal_P_Compiler_implementation_notes.pdf">http://www.standardpascal.org/The_Pascal_P_Compiler_implementation_notes.pdf</a></p>
+
+<p class=MsoNormal>In the name “Pascal-P” the “P” stood for “portable”, and
+this was what Pascal-P was designed to do. It also stood for an example and
+reference implementation of Pascal, although Wirth later issued a paper,
+together with Tony Hoare for the “Axiomatic definition of Pascal”, which was
+also aimed at exactly specifying the semantics of Pascal.</p>
+
+<p class=MsoNormal>As the importance of Pascal-P grew, the authors adopted a
+version number system and working methodology for the system. A new, cleaner
+and more portable version of the system was created in 1974 with the name
+Pascal-P2, and left the multiple early versions of the system as termed
+Pascal-P1.</p>
+
+<p class=MsoNormal>From the Pascal-P2 revision of the compiler comes many of
+the original Pascal compilers, including UCSD. In 1976, Wirth’s group made one
+last series of improvements and termed the results Pascal-P3 and Pascal-P4.
+Pascal-P3 was a redesigned compiler, but used the same pseudo machine
+instruction set as P2, and thus could be bootstrapped from an existing P2
+implementation. P4 featured a new pseudo instruction set, and thus was a fully
+redesigned compiler.</p>
+
+<p class=MsoNormal>The Zurich implementations of Pascal-P were:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Pascal-P1         1973</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Pascal-P2         1974</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Pascal-P3         1976</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Pascal-P4         1976</p>
+
+<p class=MsoNormal>Pascal-P was always an imcomplete implementation of the
+Pascal language (a subset), and was designed to be so. After it was created,
+the ISO 7185 standard for Pascal was issued, and today Pascal-P4 exists and is
+still usable with minor changes to bring it into ISO 7185 compliance.</p>
+
+<p class=MsoNormal>However, Pascal-P4 has it’s legacy problem of being a subset
+compiler of the full language. Further, it is only usable for programs that
+avoid its weaknesses, such as string storage. Keep in mind that Pascal-P was
+never designed to be a general purpose system, but rather to compile itself on
+a new machine – and then rapidly be improved to become a full compiler.</p>
+
+<p class=MsoNormal>You will find standards related to Pascal here:</p>
+
+<p class=MsoNormal><a href="http://www.standardpascal.com/standards.html">http://www.standardpascal.com/standards.html</a></p>
+
+<p class=MsoNormal>The Pascal-P compiler series (and it’s companion Pascal-S)
+have been extensively documented in the literature. However, the book “Pascal
+implementation: The P4 compiler” by Steve Pemberton and Martin Daniels stands
+out as a running code commentary on the level of “lion’s commentary on Unix”,
+it is just that good. It is also available free on line at: </p>
+
+<p class=MsoNormal><a href="http://homepages.cwi.nl/~steven/pascal/book/">http://homepages.cwi.nl/~steven/pascal/book/</a>.</p>
+
+<h2><a name="_Toc438300607"></a><a name="_Toc320481115">1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Differences
+between Pascal-P4 and full Pascal</a></h2>
+
+<p class=MsoNormal>P4 is not a full Pascal at all, but rather a subsetted
+version of the language with several features removed. The omissions and
+changes were (from the P4 web page at: <a
+href="http://www.standardpascal.com/p4.html">http://www.standardpascal.com/p4.html</a>):</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Procedure/function
+     parameters.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Interprocedural
+     gotos (goto must terminate in the same procedure/function).</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Only
+     files of type &quot;text&quot; can be used, and then only the ones that
+     are predefined by P4, which are &quot;input&quot;, &quot;output&quot;, and
+     two special files defined so that P4 can compile itself.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>&quot;mark&quot;
+     and &quot;release&quot; instead of &quot;dispose&quot;.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Curly
+     bracket comments {} are not implemented.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>The
+     predeclared identifiers maxint, text, round, page, dispose, and the
+     functions they represent, are not present.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>The
+     procedures reset, rewrite, pack and unpack&nbsp;are not implemented (they
+     are recognized as valid predefined procedures, but give an
+     'unimplemented'&nbsp;error on use).</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Undiscriminated
+     variant records.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Output
+     of boolean types.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Output
+     of reals in &quot;fixed&quot; format.</span></li>
+ <li class=MsoNormal style='color:black'><span style='font-size:13.5pt'>Set
+     constructors using subranges ('0'..'9').</span></li>
+</ul>
+
+<p class=MsoNormal>However, there are several other issues with the P4 compiler
+beyond simply the language it implemented. P4 made no attempt to economize on
+its storage of strings. This means that each string constant, no matter how
+long it was, is stored in a fixed length in the pseudo-machine code. Although
+the internal string length in the interpreter was a settable constant, and
+implementor using P4 is always be operating between the mutually exclusive
+goals of having enough string characters to represent usable strings and having
+the total string storage use too much space.</p>
+
+<p class=MsoNormal>Also, every variable in the P4 interpreter was afforded the
+same space. A character or a boolean used the same space as a floating point
+value, and an array of characters would be as costly as an array of floating
+point numbers.</p>
+
+<p class=MsoNormal>P4 itself gets around these limitations by using strings and
+string constants sparingly. This again goes to the idea that P4 (and the
+Pascal-P series) was primarily designed to compile itself, and was never
+designed as a real, working compiler.</p>
+
+<p class=MsoNormal>Very tellingly, when Kenneth Bowles received P2 and wanted
+to use it as an interpreter in and of itself, not as just a stepping stone to a
+native compiler, his team extensively reworked it to use a byte orientation,
+and implemented string storage efficientcy.</p>
+
+<p class=MsoNormal>The exact reasons why P4 is as it is, of course, belong to
+it’s original authors. However, it is fair to say that Pascal-P was designed to
+be a lightweight porting kit for Pascal. The two main concerns were:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Limiting the required memory for the run of the self compilation.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Limiting the complexity of the self compilation.</p>
+
+<p class=MsoNormal>For the first, obviously the Zurich crew was not
+particularly limited by memory. The CDC 6000 series computers they had access
+to were state of the art for their day, and after Pascal-P was produced, they
+extended it to a full native compiler for the CDC 6000 (see <a
+href="http://www.standardpascal.com/CDC6000pascal.html">http://www.standardpascal.com/CDC6000pascal.html</a>).
+This implies that a full language version of P4 could have been completed.
+However, they may have wished to lessen the load on other implementers of the
+language outside of Zurich.</p>
+
+<p class=MsoNormal>The second reason is far more concrete. Even a complex
+program such as a compiler may not use the entire language, simply because the
+need did not arise. It was, and is, standard practice to implement a subset of
+a full language for the first compiler version and improve it later.</p>
+
+<p class=MsoNormal>Finally, it is important to understand that the designers of
+Pascal-P never intended it to be used as a implementation for it’s own sake. A
+Pascal implementation that simulated, not executed, its output code was
+interesting to Wirth, but that resulted in the Pascal-S project, a one piece
+compiler/interpreter program that has also been said to have originated with
+the Pascal-P project (although you will find little in common between the
+source code for the two).</p>
+
+<p class=MsoNormal>Thus, it would never have occurred to the original designers
+to make Pascal-P an efficient and full implementation of Pascal. It was simply
+a bridge to better things.</p>
+
+<h2><a name="_Toc438300608">1.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Differences between this Pascal-P4 and Pemberton’s book</a></h2>
+
+<p class=MsoNormal>The code here is slightly different from that in the book,
+but the line numbers have been kept the same.  The changes were to allow modern
+Pascal compilers to compile the source (there were some <u><span
+style='color:black'>laxities</span></u> in the original code). The following
+are the changes:</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>The type <u><span
+style='color:black'>marktype</span></u> is added for the parameters of the
+routines mark and</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>release:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    76c76</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;      <u><span
+style='color:black'>marktype</span></u>= ^integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>The type <u><span
+style='color:black'>setty</span></u> (which represents set types) is added for
+the new type</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>compatibility rules
+of ISO Pascal:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    95c95</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;      <u><span
+style='color:black'>setty</span></u> = set of <u><span style='color:black'>setlow</span></u>..<u><span
+style='color:black'>sethigh</span></u>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    100c100</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                          <u><span style='color:black'>pset</span></u>: (<u><span
+style='color:black'>pval</span></u>: set of <u><span style='color:black'>setlow</span></u>..<u><span
+style='color:black'>sethigh</span></u>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                          <u><span style='color:black'>pset</span></u>: (<u><span
+style='color:black'>pval</span></u>: <u><span style='color:black'>setty</span></u>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Missing variant
+parts:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    123c123</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                                   declared: (<u><span style='color:black'>fconst</span></u>:
+<u><span style='color:black'>ctp</span></u>));</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                                   declared: (<u><span style='color:black'>fconst</span></u>:
+<u><span style='color:black'>ctp</span></u>); standard: ());</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    145a146</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                      types: ();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    149,150c150</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                      <u><span style='color:black'>proc</span></u>,</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                      <u><span style='color:black'>func</span></u>:  (case <u><span
+style='color:black'>pfdeckind</span></u>: <u><span style='color:black'>declkind</span></u>
+of</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                      <u><span style='color:black'>proc</span></u>, <u><span
+style='color:black'>func</span></u>:  (case <u><span style='color:black'>pfdeckind</span></u>:
+<u><span style='color:black'>declkind</span></u> of</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    154,155c154,155</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                                            actual: (<u><span
+style='color:black'>forwdecl</span></u>, <u><span style='color:black'>extern</span></u>:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                                                     boolean)))</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                                            actual: (<u><span
+style='color:black'>forwdecl</span></u>, <u><span style='color:black'>extern</span></u>:
+boolean);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                                            formal: ()))</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><u><span style='font-size:10.0pt;font-family:Consolas;color:black'>Pcom</span></u><span
+style='font-size:10.0pt;font-family:Consolas'> has the files <u><span
+style='color:black'>prr</span></u> and <u><span style='color:black'>prd</span></u>
+as standard identifiers. You have to</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>declare them for
+other compilers:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    193d192</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    194a194</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;     <u><span
+style='color:black'>prr</span></u>: text; (* comment this out when compiling
+with <u><span style='color:black'>pcom</span></u> *)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    299d298</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Other compilers don't
+have the routines mark and release. Their</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>effective semantics
+are null; you just waste heap:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    300a300,301</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;   procedure
+mark(<u><span style='color:black'>var</span></u> p: <u><span style='color:black'>marktype</span></u>);
+begin end;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;   procedure
+release(p: <u><span style='color:black'>marktype</span></u>); begin end;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    302d302</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Output the line
+number with error messages, so that if the listing</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>option has been
+switched off, you still know which line is in error:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    307c307</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;       begin
+write(output,' ****  ':15);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;       begin
+write(output,<u><span style='color:black'>linecount</span></u>:6,' ****  ':9);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Accept tabs as
+white-space as well:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    398c398</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;     repeat
+while (<u><span style='color:black'>ch</span></u> = ' ') and not <u><span
+style='color:black'>eol</span></u> do <u><span style='color:black'>nextch</span></u>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;     repeat
+while ((<u><span style='color:black'>ch</span></u> = ' ') or (<u><span
+style='color:black'>ch</span></u> = '   ')) and not <u><span style='color:black'>eol</span></u>
+do <u><span style='color:black'>nextch</span></u>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Jumping from the then
+part of an if into the else part is not allowed;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>fix cases like 1..10
+in another way:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    429c429</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;           if
+(<u><span style='color:black'>ch</span></u> = '.') or (<u><span
+style='color:black'>ch</span></u> = 'e') then</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;           if
+((<u><span style='color:black'>ch</span></u> = '.') and (input^ &lt;&gt; '.'))
+or (<u><span style='color:black'>ch</span></u> = 'e') then</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    434c434</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;                       <u><span
+style='color:black'>nextch</span></u>; if <u><span style='color:black'>ch</span></u>
+= '.' then begin <u><span style='color:black'>ch</span></u> := ':'; goto 3 end;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                       <u><span style='color:black'>nextch</span></u>; (*if
+<u><span style='color:black'>ch</span></u> = '.' then begin <u><span
+style='color:black'>ch</span></u> := ':'; goto 3 end;*)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Fix modern type
+mismatches:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    668c668</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;   procedure
+align(<u><span style='color:black'>fsp</span></u>: <u><span style='color:black'>stp</span></u>;
+<u><span style='color:black'>var</span></u> <u><span style='color:black'>flc</span></u>:
+integer);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;   procedure
+align(<u><span style='color:black'>fsp</span></u>: <u><span style='color:black'>stp</span></u>;
+<u><span style='color:black'>var</span></u> <u><span style='color:black'>flc</span></u>:
+<u><span style='color:black'>addrrange</span></u>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>An identifier
+misspelled after the 8th character:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    872c872</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;           if
+<u><span style='color:black'>sy</span></u> = <u><span style='color:black'>stringconstsy</span></u>
+then</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;           if
+<u><span style='color:black'>sy</span></u> = <u><span style='color:black'>stringconst</span></u>
+then</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Unused variables, and
+new type names:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+1529,1531c1529,1531</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;       <u><span
+style='color:black'>var</span></u> <u><span style='color:black'>oldlev</span></u>:
+0..<u><span style='color:black'>maxlevel</span></u>; <u><span style='color:
+black'>lsy</span></u>: symbol; <u><span style='color:black'>lcp</span></u>,lcp1:
+<u><span style='color:black'>ctp</span></u>; <u><span style='color:black'>lsp</span></u>:
+<u><span style='color:black'>stp</span></u>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;           <u><span
+style='color:black'>forw</span></u>: boolean; <u><span style='color:black'>oldtop</span></u>:
+<u><span style='color:black'>disprange</span></u>; <u><span style='color:black'>parcnt</span></u>:
+integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;           <u><span
+style='color:black'>llc</span></u>,<u><span style='color:black'>lcm</span></u>:
+<u><span style='color:black'>addrrange</span></u>; <u><span style='color:black'>lbname</span></u>:
+integer; <u><span style='color:black'>markp</span></u>: ^integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;       <u><span
+style='color:black'>var</span></u> <u><span style='color:black'>oldlev</span></u>:
+0..<u><span style='color:black'>maxlevel</span></u>; <u><span style='color:
+black'>lcp</span></u>,lcp1: <u><span style='color:black'>ctp</span></u>; <u><span
+style='color:black'>lsp</span></u>: <u><span style='color:black'>stp</span></u>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;           <u><span
+style='color:black'>forw</span></u>: boolean; <u><span style='color:black'>oldtop</span></u>:
+<u><span style='color:black'>disprange</span></u>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;           <u><span
+style='color:black'>llc</span></u>,<u><span style='color:black'>lcm</span></u>:
+<u><span style='color:black'>addrrange</span></u>; <u><span style='color:black'>lbname</span></u>:
+integer; markp: marktype;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    1535c1535</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;          
+llc: addrrange; count,lsize: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;          
+llc,lsize: addrrange; count: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    1819c1819</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;           i,
+entname, segsize: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;          
+entname, segsize: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    2087c2087</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;         var
+lattr: attr; lcp: ctp; lsize,lmin,lmax: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;         var
+lattr: attr; lcp: ctp; lsize: addrrange; lmin,lmax: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    2248c2248</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;            
+var lcp:ctp; llev:levrange; laddr:addrrange;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;            
+var llev:levrange; laddr:addrrange;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    2306c2306</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                 lcp:ctp; llev:levrange; laddr,len:addrrange;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                 llev:levrange; laddr,len:addrrange;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+2456,2457c2456,2457</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;            
+var lsp,lsp1: stp; varts,lmin,lmax: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                 lsize,lsz: addrrange; lval: valu;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;            
+var lsp,lsp1: stp; varts: integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                 lsize: addrrange; lval: valu;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    2750c2750</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                     cstpart: set of 0..47; lsp: stp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                     cstpart: setty; lsp: stp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Unix pc can't cope
+with this line:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    2926c2926</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;            
+(*/*)     rdiv: begin</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;            
+(* / *)   rdiv: begin</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>More unused
+variables:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    3318c3318</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;          
+var lattr: attr; lsp: stp;  lsy: symbol;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;          
+var lattr: attr;  lsy: symbol;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    3642c3642</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;     var sp:
+stp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Produce code as
+default:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    3800c3800</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;     prtables
+:= false; list := true; prcode := false; debug := true;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;     prtables
+:= false; list := true; prcode := true; debug := true;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Unused variable:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    3868c3868</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;       var i:
+integer; ch: char;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;       var i:
+integer;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Other compilers need
+to rewrite prr before using it:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+3995,3996c3995,3996</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;  
+(*compile:*)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;  
+(**********)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;   (*compile:*)
+rewrite(prr); (*comment this out when compiling with pcom *)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;  
+(**********)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>And all variables
+called 'extern' have been renamed to 'externl'.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>Differences in the
+interpreter are minimal:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>a set type has been
+added:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    45a46</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;       settype    
+= set of 0..58;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    63c64</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&lt;                                 sett       :(vs :set of 0..47);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>   
+&gt;                                 sett       :(vs :settype);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    225c226</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;       var
+name :alfa;  b :boolean;  r :real;  s :set of 0..58;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;       var
+name :alfa;  b :boolean;  r :real;  s :settype;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>the initial writeln
+has been removed:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    667c667</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt;  
+writeln(output); (* for testing *)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;   (*
+writeln(output); for testing *)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>and the type alfa has
+been added:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    47c47</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &lt; </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    ---</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>    &gt;      
+alfa      = packed array[1..10] of char;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;text-autospace:
+none'><span style='font-size:10.0pt;font-family:Consolas'>&nbsp;</span></p>
+
+<h2><a name="_Toc438300609">1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Bug fixes and improvements to Pascal-P4</a></h2>
+
+<p class=MsoNormal>Over the years, I discovered several issues and made several
+improvements in Pascal-P4. These are all made as part of the Pascal-P5 project.
+Pascal-P5 both fixes issues with Pascal-P4 and fills out the implementation to
+full implementation of Pascal. I don’t plan to introduce any bug fixes to
+Pascal-P4.</p>
+
+<h1><a name="_Toc438300610"></a><a name="_Ref397024475"></a><a
+name="_Ref397024453"></a><a name="_Ref397024435">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Using Pascal-P</a>4</h1>
+
+<h2><a name="_Toc438300611"></a><a name="_Toc320481273">2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Configuring
+P</a>4</h2>
+
+<p class=MsoNormal>P4 has a simple configuration script to set up the binary,
+script files and compiler in use for the system:</p>
+
+<p class=MsoNormal>$ Configure [options]…</p>
+
+<p class=MsoNormal>When configure is run, it attempts to determine
+automatically what it needs in the host environment, and outputs errors if it
+cannot find the correct support. Normally configure does not need options to
+configure it.</p>
+
+<p class=MsoNormal>The following options are available:</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'>--help               Outputs a help
+guide to available options.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'>--gpc                Selects GPC as the
+host compiler.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'>--ip_pascal       Selects IP Pascal as
+the host compiler</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'>--32                  Configures for 32
+bit operation.</p>
+
+<p class=MsoNormal style='margin-left:.5in'>--64                  Configures
+for 64 bit operation.</p>
+
+<p class=MsoNormal>You should know what you are doing before overriding any
+options. For example, setting 64 bit mode with a 32 bit host system will cause
+Pascal-P4 to malfunction.</p>
+
+<h2><a name="_Toc438300612"></a><a name="_Ref320508880"></a><a
+name="_Ref320508875"></a><a name="_Ref320508793"></a><a name="_Ref320508786"></a><a
+name="_Toc320481274">2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Compiling and running Pascal programs with P</a>4</h2>
+
+<p class=MsoNormal>To simply compile a run a program, use the P4 batch file:</p>
+
+<p class=Code>C:\&gt; p4 hello</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=MsoNormal>When a pascal program is run this way, it gets it's input
+from the terminal (you), and prints its results there. The p4 script
+accommodates the compiler that was used to build the system, and therefore you
+don’t need to know the exact command format of the executable.</p>
+
+<p class=MsoNormal>Pascal-P4 has an issue with input in that it tries to read
+from the console before the program runs (this issue was solved in Pascal-P5
+with “lazy I/O”). For this reason, you often have to hit carriage return just
+to start the program.</p>
+
+<p class=MsoNormal>If you were expecting P4 to look like UCSD Pascal or Borland
+Pascal, please note you took a wrong turn somewhere. P4 is the original Pascal
+language. The &quot;Pascal&quot; languages processed by UCSD and Borland were
+heavily modified, and very incompatible variants that that were brought out
+years after the original.</p>
+
+<p class=MsoNormal>All files in P4 are anonymous, and only last the length of
+the program run. The exceptions to this are the &quot;prd&quot; and
+&quot;prr&quot; files, which are used by the P4 compiler to compile and run
+itself. You can use them, but you really have to know what you are doing. If
+you need to read from a file or write to a file use redirection:</p>
+
+<p class=Code>C:\&gt; p4 test &lt; myinputfile &gt; myoutputfile</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=MsoNormal>You will find you can get a lot of tasks done this way.</p>
+
+<p class=MsoNormal>Note: </p>
+
+<p class=MsoNormal>P4 was designed to be a Pascal compiler porting tool and
+model implementation <b><i>first</i></b>, and not really as a practical day to
+day compiler.</p>
+
+<h2><a name="_Toc320481275"></a><a name="_Toc438300613"></a><a
+name="_Toc320481276">2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Compiler options</a></h2>
+
+<p class=MsoNormal>P4 uses a &quot;compiler comment&quot; to indicate options
+to the compiler, of the form:</p>
+
+<p class=MsoNormal>(*$option+/-,...*)</p>
+
+<p class=MsoNormal>This option can appear anywhere a normal comment can. The
+first character of the comment MUST be &quot;$&quot;. This is followed by any
+number if option switches separated by &quot;,&quot;. If the option end with
+&quot;+&quot;, it means to turn it on. If the option ends with &quot;-&quot;,
+it means turn it off.</p>
+
+<p class=MsoNormal>Example:</p>
+
+<p class=MsoNormal>(*$l-*)</p>
+
+<p class=MsoNormal>Turns the listing of the source code OFF.</p>
+
+<p class=MsoNormal>The following options are available:</p>
+
+<table class=MsoTableMediumGrid3Accent4 border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=210 valign=top style='width:157.2pt;border:solid white 1.0pt;
+  border-bottom:solid white 3.0pt;background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>Option</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:solid white 1.0pt;
+  border-left:none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>Meaning</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:solid white 1.0pt;
+  border-left:none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>Default</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:157.2pt;border-top:none;border-left:
+  solid white 1.0pt;border-bottom:none;border-right:solid white 3.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>t+/-</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#6EDFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>Print/don't print internal tables after each routine is compiled.</p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#6EDFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>OFF</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:157.2pt;border-top:solid white 1.0pt;
+  border-left:solid white 1.0pt;border-bottom:none;border-right:solid white 3.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>l+/-</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#B7EFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>List/don't list the source program during compilation.</p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#B7EFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>ON</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:157.2pt;border-top:solid white 1.0pt;
+  border-left:solid white 1.0pt;border-bottom:none;border-right:solid white 3.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>d+/-</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#6EDFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>Add extra code to check array bounds, subranges, etc.</p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#6EDFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>ON</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=210 valign=top style='width:157.2pt;border:solid white 1.0pt;
+  border-right:solid white 3.0pt;background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'><b><span style='color:white'>c+/-</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#B7EFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>Output/don't output intermediate code.</p>
+  </td>
+  <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#B7EFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;page-break-after:
+  avoid'>ON</p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc438300614">2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Other operations</a></h2>
+
+<p class=MsoNormal>Within the P5 toolset, you will find a series of scripts to
+perform common operations using P4. This includes building the compiler and
+interpreter using an existing ISO 7185 compatible compiler, and also testing
+P5.</p>
+
+<p class=MsoNormal>The scripts used in P4 are designed to be independent of
+what operating system you are running on. The Pascal-P4 system as been
+successfully run on the following systems:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Windows</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Ubuntu linux</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Mac OS X</p>
+
+<p class=MsoNormal>To enable this to work, there are two kinds of scripts
+available, one for DOS/Windows command shells, and another for Unix/Bash. These
+two script files live side by side, because the DOS/Windows scripts use a .bat
+extension, and Bash scripts use no extentions. Thus, when a script command is
+specified here, the particular type of script file is selected automatically.</p>
+
+<p class=MsoNormal>The only exception to this rule is that Unix users commonly
+do not place the current directory in the path. This means to execute a script
+file in the current directory, you need to specify the current directory in
+front of the script. For example:</p>
+
+<p class=MsoNormal>~/p4$ ./p4 hello</p>
+
+<h2><a name="_Toc438300615"></a><a name="_Ref320531638"></a><a
+name="_Ref320531634"></a><a name="_Toc320481277">2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reliance on Unix commands in the P4 toolset</a></h2>
+
+<p class=MsoNormal>Most of the scripts in this package, even the DOS/Windows
+scripts, rely on Unix commands like cp, sed, diff, chmod and others. I needed a
+reasonable set of support tools that were command line callable, and these are
+all both standard and reasonable.</p>
+
+<p class=MsoNormal>For Windows, the Cygwin toolset is available:</p>
+
+<p class=MsoNormal>http://www.cygwin.com</p>
+
+<p class=MsoNormal>Note that to run the cygwin tools, you will need the
+environment variable:</p>
+
+<p class=MsoNormal>CYGWIN=nodosfilewarning</p>
+
+<p class=MsoNormal>This prevents cygwin utilities from complaining about dos
+mode file specifications.</p>
+
+<p class=MsoNormal>An alternative to Cygwin is the Mingw toolkit. Mingw uses
+GNU programs that are compiled as native Windows .exe files without special
+.dll files. It typically has better integration with Windows than Cygwin, since
+it does not try to emulate Unix on Windows.</p>
+
+<p class=MsoNormal>Where possible, I have tried to use DOS/Windows commands.
+The scripts are available in both DOS/Windows and bash versions. I could have
+just required theuse of bash, which is part of the cygwin toolkit, but my aim
+is not to force Windows users into a Unix environment.</p>
+
+<h2><a name="_Toc438300616"></a><a name="_Toc320481278">2.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>The “flip”
+command and line endings</a></h2>
+
+<p class=MsoNormal>Every effort was made to make the Pascal-P4 system compile
+and evaluate system idenpendent of what system it is running on, from Windows
+command shell, to Linux with Bash shell. One common thing I have found is that
+several utilities don’t appreciate seeing a line ending outside of their
+“native” line ending, such as CRLF for Windows, and LF for linux. Examples
+include “diff” (find file differences) and Bash.</p>
+
+<p class=MsoNormal>Therefore many of the scripts try to remove the line ending
+conserations, either by ignoring such line endings, or by converting all of the
+required files to the particular line ending in use.</p>
+
+<p class=MsoNormal>The key to this is the “flip” utility. After searching for
+several line ending converters, “flip” was found on the most number of systems,
+as well as being one of the most clear and reliable utilities (it translates in
+both directions, it tolerates any mode of line ending as input, will not
+corrupt binaries, etc.).</p>
+
+<p class=MsoNormal>Unfortunately, even flip was not found on some systems. The
+simpliest way to fix this was to include the flip.c program with the
+distribution, then let you compile to form a binary on your system to replace
+the utility.</p>
+
+<p class=MsoNormal>To make the flip utility, you run:</p>
+
+<p class=MsoNormal>$ make flip</p>
+
+<p class=MsoNormal>Then flip will exist in the \bin directory.</p>
+
+<p class=MsoNormal>Note that if you are using GIT to retrieve the P5 project,
+the file entries are given the “OS specific” line ending property. This means
+both that the line endings will be converted to the line endings particular to
+your OS, and also prevents line endings from causing GIT to think the file has
+changed.</p>
+
+<h1><a name="_Toc438300617">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Building the Pascal-P4 system</a></h1>
+
+<h2><a name="_Toc320481119"></a><a name="_Toc438300618"></a><a
+name="_Toc320481279">3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Compiling and running P4 with an existing ISO 7185 compiler</a></h2>
+
+<p class=MsoNormal>You do not need to compile P4 unless you are using an
+alternative compiler or installation. The current P4 has been compiled and run
+with the following compilers and operating systems:</p>
+
+<table class=MsoTableMediumGrid3Accent4 border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=314 valign=top style='width:235.85pt;border:solid white 1.0pt;
+  border-bottom:solid white 3.0pt;background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'><b><span
+  style='color:white'>Compiler</span></b></p>
+  </td>
+  <td width=314 valign=top style='width:235.85pt;border-top:solid white 1.0pt;
+  border-left:none;border-bottom:solid white 3.0pt;border-right:solid white 1.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'><b><span
+  style='color:white'>Installations</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=314 valign=top style='width:235.85pt;border-top:none;border-left:
+  solid white 1.0pt;border-bottom:none;border-right:solid white 3.0pt;
+  background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'><b><span
+  style='color:white'>IP Pascal</span></b></p>
+  </td>
+  <td width=314 valign=top style='width:235.85pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#6EDFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>Windows</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=314 valign=top style='width:235.85pt;border:solid white 1.0pt;
+  border-right:solid white 3.0pt;background:#00ADDC;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'><b><span
+  style='color:white'>GPC</span></b></p>
+  </td>
+  <td width=314 valign=top style='width:235.85pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  background:#B7EFFF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>Windows,
+  Ubuntu, Mac OSx</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>First, you must have a ISO 7185 Pascal compiler available.
+There are several such compilers, see:</p>
+
+<p class=MsoNormal>http://www.standardpascal.org/compiler.html</p>
+
+<p class=MsoNormal>You will probally need to compile pcom.pas and pint.pas with
+the ISO 7185 Pascal compatibility mode option on for your compiler. See your
+documentation for details.</p>
+
+<p class=MsoNormal>If you are using a compiler or version of a compiler that is
+not tested to ISO 7185 standards, you will want to make sure that it is ISO
+7185 compliant. See the Pascal-P5 project for details on doing this.</p>
+
+<p class=MsoNormal>To compile pcom and pint, the components of the P4 compiler,
+use the command:</p>
+
+<p class=MsoNormal>&gt; make</p>
+
+<p class=MsoNormal>To run the other programs and batch files, you should modify
+the following files to work with your compiler:</p>
+
+<p class=MsoNormal>P4.bat              The single program compile and run batch
+file.</p>
+
+<p class=MsoNormal>compile.bat      To compile a file with all inputs and
+outputs specified.</p>
+
+<p class=MsoNormal>run.bat             To run (interpret) the intermediate file
+with all inputs and outputs specified.</p>
+
+<p class=MsoNormal>The reason you need to change these files is because
+pcom.pas uses the header file &quot;prr&quot; to output intermediate code, and
+pint.pas uses &quot;prd&quot; for input and &quot;prd&quot; for output. You
+need to find out how to connect these files in the program header to external
+named files.</p>
+
+<p class=MsoNormal>For example, in IP Pascal, header files that don't bear a
+standard system name (like &quot;input&quot; and &quot;output&quot;) are simply
+assigned in order from the command line. Thus, P4.bat is simply:</p>
+
+<p class=Code>pcom %1.p5 &lt; %1.pas</p>
+
+<p class=Code>pint %1.p5 %1.out</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=MsoNormal>Where %1 is the first parameter from the command line.</p>
+
+<p class=MsoNormal>P4.bat lets the input and output from the running program go
+to the user  terminal. Compile.bat and run.bat both specify all of the input,
+output, prd and prr files. The reason the second files are needed is so that
+the advanced automated tests can be run using batch files that aren't dependent
+on what compiler you are using.</p>
+
+<h2><a name="_Toc438300619">3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Notes on using existing compilers</a></h2>
+
+<h3><a name="_Toc438300620">3.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>GPC</a></h3>
+
+<p class=MsoNormal>GPC (GNU Pascal Compiler)  is used in the following version:</p>
+
+<p class=Code>GNU Pascal version 20070904, based on gcc-4.1.3 20080704
+(prerelease) (Ubuntu 2.1-4.1.2-27ubuntu2).</p>
+
+<p class=Code>Copyright (C) 1987-2006 Free Software Foundation, Inc.</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=MsoNormal>I have had several difficulties with other versions of GPC,
+which give errors on standard ISO 7185 source, or crash, or other difficulties.
+The GPC developers announced they were halting development on GPC in the gpc
+mailing list. Please see their web page:</p>
+
+<p class=MsoNormal><a href="http://www.gnu-pascal.de">http://www.gnu-pascal.de</a></p>
+
+<p class=MsoNormal>For any further  information.</p>
+
+<p class=MsoNormal>The main difficulty with GPC vis-a-vie P4 is that testing of
+the GPC compiler for ISO 7185 compatability was not regularly done on GPC
+releases. Thus, otherwise working GPC releases were not able to compile and run
+standard ISO 7185 source code.</p>
+
+<p class=MsoNormal>Because of this, I can only recommend the above version of
+GPC be used, which compiles and runs P4 error free. </p>
+
+<p class=MsoNormal>In addition, please be aware that I have not run the GPC
+compiler, including the above version, through a current ISO 7185 compliance
+test such as appears here. My only concern is that GPC be able to complile and
+run P4, and that the resulting P4 runs the compliance tests. I leave it for
+others to run full compliance for GPC itself.</p>
+
+<h4><a name="_Toc438300621">3.2.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>GPC on Cygwin</a></h4>
+
+<p class=MsoNormal>The current Cygwin release as of 2012/03/26 does not work,
+since it uses GPC 2005, and is broken at that (it has the .dlls for GPC
+installed incorrectly).</p>
+
+<p class=MsoNormal>A procedure to use GPC under  the current Cygwin I have used
+is as follows:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+the latest version of Cygwin (the one I tried is Cygwin/X, a very useful
+package).</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Place
+c:\cygwin\bin on your path.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Go
+to the website:</p>
+
+<p class=MsoNormal style='margin-left:.5in'><a
+href="http://www.gnu-pascal.de/binary/cygwin/">http://www.gnu-pascal.de/binary/cygwin/</a></p>
+
+<p class=MsoNormal>            And download and install:</p>
+
+<p class=MsoNormal>            <a
+href="http://gnu-pascal.de/contrib/chief/win32/cygwin/gpc-20070904-with-gcc.i686-pc-cygwin.tar.gz"><span
+style='font-size:13.5pt;background:white'>gpc-20070904-with-gcc.i686-pc-cygwin.tar.gz</span></a><span
+style='font-size:13.5pt;color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:13.5pt;
+color:black;background:white'>(4.4mb, gpc-20070904, based on gcc-3.4.4,<span
+class=apple-converted-space>&nbsp;</span></span><span style='font-size:13.5pt;
+color:red;background:white'>with gcc-3.4.4 support files</span><span
+style='font-size:13.5pt;color:black;background:white'>)</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='color:black'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black;background:white'>After installing this
+package in an appropriate directory, say c:\gpc, modify your path to include
+c:\gpc\usr\bin ahead of the c:\cygwin\bin directory in the path.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='color:black'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black;background:white'>Add
+cygwin=nodosfilewarning (as stated in section </span><span
+style='color:black;background:white'>15</span><span style='color:black;
+background:white'> “</span>Reliance on Unix commands in the P5 toolset<span
+style='color:black;background:white'>”).</span></p>
+
+<p class=MsoNormal><span style='background:white'>Now you will be able to
+follow the normal gpc instructions here to get p4 running, using the standard
+Windows command shell. Note that this trick won’t work with the command shells
+Cygwin provides.</span></p>
+
+<p class=MsoNormal><span style='background:white'>To reiterate the steps that
+follow:</span></p>
+
+<p class=MsoNormal><span style='background:white'>$ configure --gpc         Configure
+for GPC compiler.</span></p>
+
+<p class=MsoNormal><span style='background:white'>$ make                         Build
+the P4 binaries.</span></p>
+
+<p class=MsoNormal><span style='background:white'>$ regress                      Run
+the regression suites to check the P4 compiler.</span></p>
+
+<h4><a name="_Toc438300622">3.2.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='background:white'>GPC for mingw</span></a></h4>
+
+<p class=MsoNormal>Mingw (Minimal GNU for Windows) is a different port of the
+GNU catalog for windows that runs directly on windows. That is, each binary is
+statically linked with its support library, and it is designed to work with
+windows directly.</p>
+
+<p class=MsoNormal>As Cygwin has become more and more a full emulation of the
+Unix environment (a good thing), it has become less usable in interaction with
+other Windows programs. Thus I have found the mingw package more cooperative
+for every day Windows work.</p>
+
+<p class=MsoNormal>Mingw does not come natively with GPC installed (or much
+else). I recommend you also pick up the MSYS package for mingw, which is a
+series of GNU programs that are compiled to run in the windows environment
+using Mingw.</p>
+
+<p class=MsoNormal>To get the mingw distribution of GPC, follow the steps:</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;page-break-after:avoid'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Go
+to the website:</p>
+
+<p class=MsoNormal style='margin-left:.5in;page-break-after:avoid'><a
+href="http://www.gnu-pascal.de/binary/mingw32/">http://www.gnu-pascal.de/binary/mingw32/</a></p>
+
+<p class=MsoNormal style='page-break-after:avoid'>            And download and
+install:</p>
+
+<p class=MsoNormal style='page-break-after:avoid'>            <a
+href="http://gnu-pascal.de/contrib/chief/win32/cygwin/gpc-20070904-with-gcc.i686-pc-cygwin.tar.gz"><span
+style='font-size:13.5pt;background:white'>gpc-20070904-with-gcc.i386-pc-mingw32.tar.gz</span></a><span
+style='font-size:13.5pt;color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:.5in;page-break-after:avoid'><span
+style='font-size:13.5pt;color:black;background:white'>(4.4mb, gpc-20070904,
+based on gcc-3.4.5,<span class=apple-converted-space>&nbsp;</span></span><span
+style='font-size:13.5pt;color:red;background:white'>with gcc-3.4.5 support
+files</span><span style='font-size:13.5pt;color:black;background:white'>)</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'><span style='color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:black;background:white'>After installing this package in an
+appropriate directory, say c:\gpc, modify your path to include c:\gpc\usr\bin directory
+in the path.</span></p>
+
+<p class=MsoNormal><span style='color:black;background:white'>Note that this is
+based on a slightly different version than Cygwin.</span></p>
+
+<p class=MsoNormal><span style='background:white'>To reiterate the steps that
+follow:</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'><span
+style='background:white'>$ make flip                  Create flip.exe because
+msys does not have one. Note that you will need to move the resulting flip.exe
+to your bin directory.</span></p>
+
+<p class=MsoNormal><span style='background:white'>$ configure --gpc         Configure
+for GPC compiler.</span></p>
+
+<p class=MsoNormal><span style='background:white'>$ make                         Build
+the P4 binaries.</span></p>
+
+<p class=MsoNormal><span style='background:white'>$ regress                      Run
+the regression suites to check the P4 compiler.</span></p>
+
+<p class=MsoNormal><span style='background:white'>Note: The bash command shell
+does not work with programs generated by GPC. It gives and error when executing
+them. Thus it is necessary to use the standard command shell in conjuction with
+Mingw utilities.</span></p>
+
+<h1><a name="_Toc438300623"></a><a name="_Toc320481294">4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Files
+in the P4 package</a></h1>
+
+<p class=MsoNormal>Note: for script files, both a DOS/Windows (X.bat) and bash
+script (X) are provided. Their function is identical, one is for use with the
+DOS/Windows command shell, the other for bash shell.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>configure.bat</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>configure                     Sets
+the current compiler to use to create P4 binaries.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>INSTALL                     How
+to install the package.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>LICENSE                     About
+the license terms for this package.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>Makefile                      The
+makefile for the project.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>NEWS                          Contains
+various information about the current release.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>README                    Brief
+introduction to the project, it points to this document now.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>Setpath</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>Setpath.bat                  Sets
+the bin path to find executables.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>TODO                         List
+of action items on project.</p>
+
+<h2><a name="_Toc438300624">4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Directory: bin</a></h2>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt'>compile</p>
+
+<p class=MsoNormal style='margin-left:106.55pt;text-indent:-106.55pt'>compile.bat                 Batch
+mode compile for P5. It takes all input and output from supplied files, and is
+used by all of the other testing scripts below. You will need to change this to
+fit your particular Pascal implementation.</p>
+
+<p class=MsoNormal style='margin-left:106.55pt;page-break-after:avoid'>*** You
+will need to change this to fit your particular Pascal system ***</p>
+
+<p class=MsoNormal style='margin-left:106.55pt'>It uses input and output from
+the terminal, so is a good way to  run arbitrary programs.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>diffnole</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>diffnole.bat                  Runs
+a diff, but ignoring line endings (DOS/Windows vs. Unix).</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>doseol</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>doseol.bat                    Fixes
+the  line endings on text files to match the DOS/Windows convention, CRLF.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>flip.exe                        changes
+text files between DOS and Unix mode line endings.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>fixeol</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>fixeol.bat                     Arranges
+the line endings on bash scripts to be Unix, and those of the DOS/Windows
+scripts to be DOS/Windows line endings. This is required because the editors on
+the respective systems insert their own line endings according to system, and
+this can cause problems when they are run on a different system.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>flip.exe                        Program
+to fix line endings in source files.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt;page-break-after:
+avoid'>P4</p>
+
+<p class=MsoNormal style='margin-left:106.55pt;text-indent:-106.55pt;
+page-break-after:avoid'>P4.bat                          A batch file that
+compiles and runs a single Pascal program. You will need to change this to fit
+your particular Pascal implementation. It uses input and output from the
+terminal, so it is a good way to run arbitrary programs.</p>
+
+<p class=MsoNormal style='margin-left:106.55pt;page-break-after:avoid'>*** You
+will need to change this to fit your particular Pascal system ***</p>
+
+<p class=MsoNormal style='margin-left:106.55pt'>It uses input and output from
+the terminal, so is a good way to  run arbitrary programs.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>pcom</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>pcom.exe                    The
+IP Pascal compiled pcom binary for Windows/Unix. See comments in 12 “Compiling and running Pascal programs with P5” for how to use this. All of the
+supplied batch files are customized for this version.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt'>pint</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>pint.exe                       The
+IP Pascal compiled pint binary for Windows. See comments in 12 “Compiling and running Pascal programs with P5” for how to use this. All of the supplied batch
+files are customized for this version.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>regress</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>regress.bat                    The
+regression test simply runs all of the possible tests through P5. It is usually
+run after a new compile of P5, or any changes made to P5.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt;page-break-after:
+avoid'>run</p>
+
+<p class=MsoNormal style='margin-left:106.55pt;text-indent:-106.55pt'>run.bat                         Batch
+mode run for P5. It takes all input and output from supplied files, and is used
+by all of the other testing scripts below. You will need to change this to fit
+your particular Pascal implementation.</p>
+
+<p class=MsoNormal style='margin-left:106.55pt;page-break-after:avoid'>*** You
+will need to change this to fit your particular Pascal system ***</p>
+
+<p class=MsoNormal style='margin-left:106.55pt'>It uses input and output from
+the terminal, so is a good way to  run arbitrary programs.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>testprog</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>testprog.bat                  An
+automated testing batch file. Runs a given program with the input file,
+delivering an output file, then compares to a reference file. </p>
+
+<p class=MsoNormal style='margin-left:106.35pt'>Testprog is used to test the
+following program files for p5: hello, roman, match, startrek, basics and
+iso7185pat.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>unixeol</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>unixeol.bat                   Fixes
+the  line endings on text files to match the Unix convention, LF.</p>
+
+<h2><a name="_Toc438300625">4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Directory: c_support</a></h2>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>flip.c                            C
+program to replace the local version of  “flip”, the Unix line ending fixup
+tool. It is provided in source form here because not all Unix installations
+have it (for example MAC OS X didn’t have it). This allows you to compile it
+yourself for your target system.</p>
+
+<h2><a name="_Toc438300626">4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Directory: doc</a></h2>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt'>the_p4_compiler.doc</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt'>the_p4_compiler.docx</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:106.55pt;margin-bottom:.0001pt;text-indent:-106.55pt'>the_p4_compiler.html</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>the_p4_compiler.pdf   This
+document in various forms, word 2007, word 1997, PDF, and HTML.</p>
+
+<h2><a name="_Toc438300627"></a><a name="_Toc320481295">4.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Directory:
+gpc</a></h2>
+
+<p class=MsoNormal>This directory contains scripts specifically modified for
+GPC.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>compile</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>compile.bat                  The
+GPC specific version of the compile script.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>cpcom</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>cpcom.bat                    The
+GPC specific version of the compile compiler script.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in;page-break-after:
+avoid'>cpint</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>cpint.bat                       The
+GPC specific version of the compile interpreter script.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:112.3pt;margin-bottom:.0001pt;text-indent:-112.3pt'>P4</p>
+
+<p class=MsoNormal style='margin-left:112.5pt;text-indent:-112.5pt'>P4.bat                            The
+GPC specific version of the p5 script.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in;page-break-after:
+avoid'>run</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>run.bat                         The
+GPC specific version of the run script.</p>
+
+<h2><a name="_Toc438300628"></a><a name="_Toc320481296">4.5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Directory:
+gpc/linux_X86</a></h2>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>pcom</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>pint                              Contains
+binaries compiled by GPC for Linux/Ubuntu</p>
+
+<h2><a name="_Toc438300629"></a><a name="_Toc320481298">4.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Directory:
+gpc/standard_tests</a></h2>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>standardp.pas               Contains
+the compare file for the standard test.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>standardp.cmp             Contains
+the compare file for the standard test.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>Standard.inp                Input
+file for the standard test.</p>
+
+<h2><a name="_Toc438300630"></a><a name="_Toc320481299">4.7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Directory:
+gpc/windows_X86</a></h2>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>pcom.exe</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>pint.exe                        Contains
+binaries compiled by GPC for Windows.</p>
+
+<h2><a name="_Toc438300631"></a><a name="_Toc320481300">4.8<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Directory:
+ip_pascal</a></h2>
+
+<p class=MsoNormal>This directory contains scripts specifically modified for IP
+Pascal.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>compile</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>compile.bat                  The
+IP Pascal specific version of the compile script.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>P4</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>P4.bat                          The
+IP Pascal specific version of the p4 script.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.5in;margin-bottom:.0001pt;text-indent:-1.5in'>run.bat</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>run                               The
+IP Pascal specific version of the run script.</p>
+
+<h2><a name="_Toc438300632"></a><a name="_Toc320481301">4.9<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Directory:
+ip_pascal/standard_tests</a></h2>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>iso7185pat.cmp           Contains
+the compare file for iso7185pat for IP Pascal.</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>iso7185pats.cmp          Contains
+the compare file for iso7185pats for IP Pascal.</p>
+
+<h2><a name="_Toc438300633"></a><a name="_Toc320481302">4.10<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span>Directory:
+ip_pascal/windows_X86</a></h2>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt'>pcom.exe</p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:-1.5in'>pint.exe                        Contains
+binaries compiled by IP Pascal for Windows</p>
+
+<h2><a name="_Toc438300634"></a><a name="_Toc320481303">4.11<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span>Subdirectory:
+sample_programs</a></h2>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>hello.pas                      One
+of several test programs used to prove the P4 system. This is the standard
+&quot;hello, world&quot; program.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>hello.inp                      Input
+to hello for automated testing.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>hello.cmp                    Hello
+compare file for automated testing.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>qsort.pas                      Demonstrate
+the quicksort algorithim.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>qsort.inp                      Input
+to qsort for automated testing.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>qsort.cmp                    qsort
+compare file for automated testing.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>roman.pas                   A
+slightly more complex test program, prints roman numerals. From Niklaus Wirth's
+&quot;User Manual and Report&quot;.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>roman.inp                    Input
+file for roman automated testing.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>roman.cmp                  Compare
+file for roman automated testing.</p>
+
+<h2><a name="_Toc438300635">4.12<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span>Directory: source</a></h2>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>pcom.pas                     The
+compiler source in Pascal.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>pcomOrg.pas               The
+original Steve Pemberton compiler source.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>pint.pas                       The
+interpreter source in Pascal.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>pintOrg.pas                  The
+original Steve Pemberton interpreter source.</p>
+
+<h2><a name="_Toc438300636"></a><a name="_Toc320481304">4.13<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span>Directory: standard_tests</a></h2>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>standardp.cmp             Contains
+the output from the PAT file for pass/fail comparison.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>standardp.inp              The
+input file for the Pascal acceptance test.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>standardp.pas              The
+Pascal Acceptance Test. This is a single Pascal source that tests how well a
+given Pascal implementation obeys the P4 subset of Pascal.</p>
+
+<p class=MsoNormal style='margin-left:106.35pt;text-indent:-106.35pt'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
