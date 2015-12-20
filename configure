@@ -90,7 +90,8 @@ if [[ $rc != 0 ]] ; then
 
 fi
 checkexists ls
-checkexists zip
+checkexists gzip
+checkexists tar
 
 #
 # Check user arguments

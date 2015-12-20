@@ -36,7 +36,8 @@ where /q cp || echo *** No cp was found
 where /q mv || echo *** No mv was found
 where /q flip || echo *** No flip was found
 where /q ls || echo *** No ls was found
-where /q zip || echo *** No zip was found
+where /q gzip || echo *** No gzip was found
+where /q tar || echo *** No tar was found
 
 rem
 rem Evaluate compiler version and word size
