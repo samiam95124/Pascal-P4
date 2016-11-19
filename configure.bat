@@ -117,13 +117,13 @@ for %%x in (%*) do (
 
 	if "%%x" == "--help" (
 
-        echo "Configure program for Pascal-p4"
-        echo
-        echo "--gpc:       Select GPC as target compiler"
-        echo "--ip_pascal: Select IP Pascal as target compiler"
-        echo "--32:        Select 32 bit target"
-        echo "--64:        Select 64 bit target"
-        echo
+        echo Configure program for Pascal-p4
+        echo.
+        echo --gpc:       Select GPC as target compiler
+        echo --ip_pascal: Select IP Pascal as target compiler
+        echo --32:        Select 32 bit target
+        echo --64:        Select 64 bit target
+        echo.
         exit /b 1
 
 	) else if "%%x" == "--gpc" (
