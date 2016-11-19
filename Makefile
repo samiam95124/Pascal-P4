@@ -54,12 +54,12 @@ repo_ready:
 #
 # Make flip program
 #
-flip:
+flip: c_support\flip.c
 	gcc -o bin\flip c_support\flip.c
-	
+
 #
 # Make archive
 #
 archive:
 	rm pascal-p4.tar.gz
-	tar --exclude='./.git' --exclude='./.cproject' --exclude='./.project' -zcvf pascal-p4.tar.gz .
+	tar --exclude='./.git' --exclude='./.cproject' --exclude='./.project' -zcvf pascal-p4.tar.gz
