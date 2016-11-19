@@ -56,7 +56,7 @@ repo_ready:
 #
 flip: c_support\flip.c
 	gcc -o bin\flip c_support\flip.c
-	
+
 #
 # Make archive
 #
