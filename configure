@@ -64,6 +64,8 @@ else
     rc=$?
     if [[ $rc == 0 ]] ; then
 
+		echo "*** Pascal-p4 will only work with 32 bits"
+		exit 1
         bits="64"
 
     fi
@@ -197,22 +199,6 @@ else
    echo
    echo "IP Pascal  - use \"ip_pascal\""
    echo "GPC Pascal - use \"GPC\""
-
-fi
-
-#
-# Set according to number of bits
-#
-if [ $bits = "32" ]
-then
-
-    echo "Setting for 32 bit target"
-    set32
-
-else
-
-    echo "Setting for 64 bit target"
-    set64
 
 fi
 
