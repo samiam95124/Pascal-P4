@@ -61,5 +61,5 @@ flip: c_support\flip.c
 # Make archive
 #
 archive:
-	rm pascal-p4.tar.gz
+	rm -f pascal-p4.tar.gz
 	tar --exclude='./.git' --exclude='./.cproject' --exclude='./.project' -zcvf pascal-p4.tar.gz
